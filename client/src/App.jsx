@@ -20,7 +20,7 @@ function App() {
 
     if (token) {
       axios
-        .get('http://localhost:5000/api/auth/me', {
+        .get('https://chatbackend-4to3.onrender.com/api/auth/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     if (user && token) {
       axios
-        .get('http://localhost:5000/api/auth/users', {
+        .get('https://chatbackend-4to3.onrender.com/api/auth/users', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUsers(res.data));
@@ -50,7 +50,7 @@ function App() {
   // Setup socket connection
   useEffect(() => {
     if (user) {
-      const s = io('http://localhost:5000', {
+      const s = io('https://chatbackend-4to3.onrender.com', {
         auth: { token },
       });
       setSocket(s);

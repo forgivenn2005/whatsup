@@ -11,7 +11,7 @@ const Chat = ({ user, selectedUser, socket }) => {
     const token = localStorage.getItem('token');
     if (selectedUser) {
       axios
-        .get(`http://localhost:5000/api/messages/${selectedUser._id}`, {
+        .get(`https://chatbackend-4to3.onrender.com/api/messages/${selectedUser._id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
